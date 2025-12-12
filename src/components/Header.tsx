@@ -23,7 +23,6 @@ export function Header() {
     }
   };
 
-  // SVG Icons
   const MailIcon = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -56,18 +55,20 @@ export function Header() {
         }`}
       >
         <div className="w-full flex items-center justify-between px-6 md:px-10 h-20">
-          {/* Logo - moved further from edge (tripled spacing) */}
-          <div 
-            className={`text-xl font-semibold tracking-tight transition-colors duration-300 ${
-              isScrolled ? 'text-black' : 'text-white'
-            }`}
-          >
-            Kagan<span className={`font-normal ${isScrolled ? 'text-gray-500' : 'text-gray-300'}`}>Tech</span>
+          
+          {/* Logo - SVG with better sizing */}
+          <div className="flex items-center">
+            <img 
+              src="/logo.svg" 
+              alt="KaganTech" 
+              className={`h-10 w-auto transition-all duration-300 ${
+                isScrolled ? 'brightness-0' : 'brightness-0 invert'
+              }`}
+            />
           </div>
 
-          {/* Desktop Navigation - business-focused sections */}
           <nav className="hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
-            {['about', 'services', 'work'].map((item) => (
+            {['about', 'services', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(`#${item}`)}
@@ -75,8 +76,7 @@ export function Header() {
                   isScrolled ? 'text-gray-700 hover:text-black' : 'text-white hover:opacity-80'
                 }`}
               >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-                {/* Underline animation */}
+                {item === 'contact' ? 'Connect' : item.charAt(0).toUpperCase() + item.slice(1)}
                 <span 
                   className={`absolute bottom-0 left-0 h-[2px] transition-all duration-300 ${
                     activeSection === item 
@@ -88,7 +88,6 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Email icon - also moved further from edge to match */}
           <div className="flex items-center gap-4">
             <button
               onClick={() => window.location.href = "mailto:business@kagan.tech"}
@@ -102,7 +101,6 @@ export function Header() {
               <MailIcon />
             </button>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`md:hidden transition-colors duration-300 ${
@@ -116,18 +114,17 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
       <div className={`fixed inset-0 bg-black/95 z-40 md:hidden transition-transform duration-300 ${
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <nav className="flex flex-col items-center justify-center h-full gap-8 text-white">
-          {['about', 'services', 'work'].map((item) => (
+          {['about', 'services', 'contact'].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(`#${item}`)}
               className="text-2xl font-medium hover:opacity-80 transition-opacity"
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
+              {item === 'contact' ? 'Connect' : item.charAt(0).toUpperCase() + item.slice(1)}
             </button>
           ))}
           

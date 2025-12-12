@@ -24,11 +24,11 @@ export function About() {
                 {/* Stats in compact format */}
                 <div className="space-y-6">
                   <div className="border-b border-gray-200 pb-4">
-                    <div className="text-3xl font-bold text-black">500K+</div>
+                    <div className="text-3xl font-bold text-black">1M+</div>
                     <div className="text-xs text-gray-600 uppercase tracking-wider">Followers</div>
                   </div>
                   <div className="border-b border-gray-200 pb-4">
-                    <div className="text-3xl font-bold text-black">50M+</div>
+                    <div className="text-3xl font-bold text-black">300M+</div>
                     <div className="text-xs text-gray-600 uppercase tracking-wider">Views</div>
                   </div>
                   <div className="border-b border-gray-200 pb-4">
@@ -106,7 +106,6 @@ export function About() {
                       {[
                         'Product Reviews',
                         'Tech Education', 
-                        'Business Strategy',
                         'Content Creation',
                         'Brand Storytelling',
                         'Youth Empowerment'
