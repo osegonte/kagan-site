@@ -15,7 +15,7 @@ export function Services() {
           clipPath: 'polygon(0 0, 100% 10%, 100% 100%, 0% 100%)',
           marginTop: '-80px',
           paddingTop: '120px',
-          background: 'linear-gradient(to bottom, #fafafa, #ffffff)'
+          background: 'linear-gradient(to bottom, #f5f0eb, #faf8f5)'
         }}
       >
         <div className="py-24 md:py-32">
@@ -33,10 +33,9 @@ export function Services() {
               {services.map((service, index) => (
                 <div 
                   key={index}
-                  className="text-center p-6 rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  className="text-center p-8 rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer bg-white"
                   style={{
-                    backgroundColor: '#f8f8f8',
-                    borderTop: '3px solid #8B7355'
+                    borderTop: '4px solid #8B7355'
                   }}
                 >
                   <h3 className="text-lg font-medium text-gray-900 mb-2">
@@ -51,12 +50,9 @@ export function Services() {
 
             {/* Main CTA */}
             <div className="text-center">
-              <p className="text-gray-600 mb-6 text-lg">
-                Ready to create something impactful together?
-              </p>
               <a
                 href="mailto:business@kagan.tech"
-                className="inline-block px-10 py-4 text-white rounded-full hover:opacity-90 transition-all text-lg font-medium"
+                className="inline-block px-10 py-4 text-white rounded-full hover:opacity-90 transition-all text-lg font-medium shadow-lg hover:scale-105"
                 style={{backgroundColor: '#8B7355'}}
               >
                 Let's Discuss Your Project

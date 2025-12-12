@@ -19,8 +19,8 @@ export function About() {
             {/* Layout that works with diagonal */}
             <div className="grid md:grid-cols-12 gap-8">
               
-              {/* Left side - smaller space (stats) */}
-              <div className="md:col-span-4 pt-8 md:pt-16">
+              {/* Left side - smaller space (stats) - MOBILE FIX: Add left padding on mobile only */}
+              <div className="md:col-span-4 pt-8 md:pt-16 pl-8 md:pl-0">
                 {/* Stats in compact format */}
                 <div className="space-y-6">
                   <div className="border-b border-gray-200 pb-4">
