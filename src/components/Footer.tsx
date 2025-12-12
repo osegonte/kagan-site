@@ -8,7 +8,7 @@ export function Footer() {
           
           {/* Logo & Description */}
           <div className="space-y-4">
-            <img src="/logo.svg" alt="KaganTech" className="h-8" />
+            <img src="/logo.png" alt="KaganTech" className="h-8" />
             <p className="text-gray-400 text-sm leading-relaxed">
               Creating tech-focused content that bridges the gap between technology and everyday users.
             </p>

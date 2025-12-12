@@ -56,12 +56,12 @@ export function Header() {
       >
         <div className="w-full flex items-center justify-between px-6 md:px-10 h-20">
           
-          {/* Logo - SVG with better sizing */}
+          {/* Logo - PNG with better sizing */}
           <div className="flex items-center">
             <img 
-              src="/logo.svg" 
+              src="/logo.png" 
               alt="KaganTech" 
-              className={`h-10 w-auto transition-all duration-300 ${
+              className={`h-24 w-auto transition-all duration-300 ${
                 isScrolled ? 'brightness-0' : 'brightness-0 invert'
               }`}
             />
