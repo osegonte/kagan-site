@@ -19,8 +19,8 @@ export function About() {
             {/* Layout that works with diagonal */}
             <div className="grid md:grid-cols-12 gap-8">
               
-              {/* Left side - smaller space (stats) - MOBILE FIX: Move to right side on mobile */}
-              <div className="md:col-span-4 pt-8 md:pt-16 order-2 md:order-1 ml-auto md:ml-0 max-w-xs md:max-w-none">
+              {/* Left side - smaller space (stats) - MOBILE FIX: Push MORE right and down */}
+              <div className="md:col-span-4 pt-32 md:pt-16 pl-20 md:pl-0">
                 {/* Stats in compact format */}
                 <div className="space-y-6">
                   <div className="border-b border-gray-200 pb-4">
@@ -43,7 +43,7 @@ export function About() {
               </div>
 
               {/* Right side - main content (larger space) */}
-              <div className="md:col-span-8 md:pl-12 order-1 md:order-2">
+              <div className="md:col-span-8 md:pl-12">
                 {/* Section Title */}
                 <div className="mb-8">
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 text-black">
