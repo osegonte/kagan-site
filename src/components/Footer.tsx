@@ -6,6 +6,9 @@ export function Footer() {
   const { data: settings } = useSettings();
   const { data: social } = useSocial();
 
+  // Use Sanity logo if available, otherwise fallback to local
+  const logoUrl = settings?.logoUrl || "/logo.png";
+
   // Show minimal footer while loading
   if (!settings || !social) {
     return (
@@ -23,7 +26,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 pb-8 border-b border-white/10">
           
           <div className="space-y-4">
-            <img src="/logo.png" alt={settings.siteTitle} className="h-8" />
+            <img src={logoUrl} alt={settings.siteTitle} className="h-8 brightness-0 invert" />
             <p className="text-gray-400 text-sm leading-relaxed">
               {settings.footerTagline}
             </p>

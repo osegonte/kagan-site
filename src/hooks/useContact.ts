@@ -4,7 +4,8 @@ const CONTACT_QUERY = `*[_type == "contact"][0]{
   title,
   description,
   ctaText,
-  email
+  email,
+  "contactImageUrl": contactImage.asset->url
 }`
 
 export interface ContactData {
@@ -12,6 +13,7 @@ export interface ContactData {
   description: string
   ctaText: string
   email: string
+  contactImageUrl?: string
 }
 
 export function useContact() {

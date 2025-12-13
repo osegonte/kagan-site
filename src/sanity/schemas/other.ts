@@ -3,6 +3,15 @@ export const heroSchema = {
   title: 'Hero Section',
   type: 'document',
   fields: [
+    { 
+      name: 'heroImage', 
+      title: 'Hero Background Image', 
+      type: 'image',
+      options: {
+        hotspot: true // Allows positioning
+      },
+      description: 'Main hero background image (recommended: 1920x1080px or larger)'
+    },
     { name: 'headline', title: 'Main Headline', type: 'string' },
     { name: 'subheadline', title: 'Subheadline', type: 'string' },
     { name: 'description', title: 'Description', type: 'text', rows: 4 },
@@ -20,6 +29,15 @@ export const contactSchema = {
   fields: [
     { name: 'title', title: 'Section Title', type: 'string' },
     { name: 'description', title: 'Description', type: 'text', rows: 3 },
+    { 
+      name: 'contactImage', 
+      title: 'Contact Section Image', 
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+      description: 'Image for contact section (recommended: 800x1000px portrait)'
+    },
     { name: 'ctaText', title: 'CTA Button Text', type: 'string' },
     { name: 'email', title: 'Contact Email', type: 'string' },
   ],
@@ -44,6 +62,15 @@ export const settingsSchema = {
   fields: [
     { name: 'siteTitle', title: 'Site Title', type: 'string' },
     { name: 'siteDescription', title: 'Site Description', type: 'text' },
+    { 
+      name: 'logo', 
+      title: 'Site Logo (PNG with transparency recommended)', 
+      type: 'image',
+      options: {
+        hotspot: true
+      },
+      description: 'Main site logo (recommended: transparent PNG, ~200px height)'
+    },
     { name: 'footerTagline', title: 'Footer Tagline', type: 'string' },
     { name: 'footerCopyright', title: 'Footer Copyright Text', type: 'string' },
   ],

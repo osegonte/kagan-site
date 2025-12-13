@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useSettings } from '../hooks/useSettings';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const { data: settings } = useSettings();
+
+  // Use Sanity logo if available, otherwise fallback to local
+  const logoUrl = settings?.logoUrl || "/logo.png";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,8 +64,8 @@ export function Header() {
           {/* Logo - PNG with better sizing */}
           <div className="flex items-center">
             <img 
-              src="/logo.png" 
-              alt="KaganTech" 
+              src={logoUrl}
+              alt={settings?.siteTitle || "KaganTech"}
               className={`h-24 w-auto transition-all duration-300 ${
                 isScrolled ? 'brightness-0' : 'brightness-0 invert'
               }`}

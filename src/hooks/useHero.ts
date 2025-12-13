@@ -7,7 +7,8 @@ const HERO_QUERY = `*[_type == "hero"][0]{
   primaryCTA,
   primaryCTALink,
   secondaryCTA,
-  secondaryCTALink
+  secondaryCTALink,
+  "heroImageUrl": heroImage.asset->url
 }`
 
 export interface HeroData {
@@ -18,6 +19,7 @@ export interface HeroData {
   primaryCTALink: string
   secondaryCTA: string
   secondaryCTALink: string
+  heroImageUrl?: string
 }
 
 export function useHero() {

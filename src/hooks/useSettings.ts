@@ -4,7 +4,8 @@ const SETTINGS_QUERY = `*[_type == "settings"][0]{
   siteTitle,
   siteDescription,
   footerTagline,
-  footerCopyright
+  footerCopyright,
+  "logoUrl": logo.asset->url
 }`
 
 export interface SettingsData {
@@ -12,6 +13,7 @@ export interface SettingsData {
   siteDescription: string
   footerTagline: string
   footerCopyright: string
+  logoUrl?: string
 }
 
 export function useSettings() {

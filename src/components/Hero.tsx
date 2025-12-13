@@ -1,16 +1,14 @@
 import { useHero } from '../hooks/useHero';
 
 export function Hero() {
-  const heroImage = "/hero.jpg";
   const { data, loading } = useHero();
   
-  // Show hero with default content while loading
   if (loading || !data) {
     return (
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <img
-            src={heroImage}
+            src="/hero.jpg"
             alt="Kagan"
             className="absolute inset-0 w-full h-full"
             style={{
@@ -34,6 +32,9 @@ export function Hero() {
       </section>
     );
   }
+
+  // Use Sanity image if available, otherwise fallback to local
+  const heroImage = data.heroImageUrl || "/hero.jpg";
   
   return (
     <section className="relative h-screen w-full overflow-hidden">

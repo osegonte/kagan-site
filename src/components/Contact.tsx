@@ -13,6 +13,9 @@ export function Contact() {
     );
   }
 
+  // Use Sanity image if available, otherwise fallback to local
+  const contactImage = data.contactImageUrl || "/contact-image.jpg";
+
   return (
     <section id="contact" className="relative py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
@@ -37,7 +40,7 @@ export function Contact() {
               className="absolute inset-0 bg-gray-900 overflow-hidden" 
               style={{clipPath: 'polygon(35% 0%, 100% 0%, 100% 100%, 40% 100%, 0% 60%, 0% 20%)'}}
             >
-              <img src="/contact-image.jpg" alt="Kagan" className="w-full h-full object-cover object-center" />
+              <img src={contactImage} alt="Kagan" className="w-full h-full object-cover object-center" />
               <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent"></div>
             </div>
           </div>
